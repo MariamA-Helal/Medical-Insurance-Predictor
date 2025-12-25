@@ -12,8 +12,7 @@ This is a Full-Stack Machine Learning web application that predicts medical insu
 
 ##  Tech Stack
 - **Backend:** FastAPI (Python)
-- **Machine Learning:** Scikit-Learn, Pandas, Joblib
-- **Frontend:** HTML5, CSS3, Bootstrap
+- **Machine Learning:** Scikit-Learn, Pandas, Joblib, matplotlab
 - **Server:** Uvicorn
 
 ##  How to Run
