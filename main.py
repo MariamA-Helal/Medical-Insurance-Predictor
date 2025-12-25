@@ -25,11 +25,11 @@ async def home(request: Request):
 async def predict_insurance(request: Request, age: int = Form(...), bmi: float = Form(...),
                             children: int = Form(...), sex: str = Form(...),
                             smoker: str = Form(...), region: str = Form(...)):
-    # تحميل الموديل "جوه" الفانكشن عشان السيرفر ميتقلش وهو بيقوم
+    
     model_path = os.path.join(BASE_DIR, 'insurance_model.pkl')
     model = joblib.load(model_path)
 
-    # تجهيز البيانات
+
     is_male = 1 if sex.lower() == "male" else 0
     is_smoker = 1 if smoker.lower() == "yes" else 0
     r_nw = 1 if region == "northwest" else 0
@@ -63,4 +63,5 @@ async def predict_insurance(request: Request, age: int = Form(...), bmi: float =
     return {
         "Predicted_Cost": f"{round(prediction, 2)}$",
         "Analysis": ai_msg
+
     }
